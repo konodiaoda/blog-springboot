@@ -10,12 +10,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 
-/**
- * 搜索文章
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @Builder
 @AllArgsConstructor

@@ -1,9 +1,11 @@
 package com.wjh.blog.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wjh.blog.constant.CommonConst;
 import com.wjh.blog.dao.MenuDao;
+import com.wjh.blog.dto.LabelOptionDTO;
 import com.wjh.blog.dto.MenuDTO;
 import com.wjh.blog.dto.UserMenuDTO;
 import com.wjh.blog.entity.Menu;
@@ -11,6 +13,7 @@ import com.wjh.blog.service.MenuService;
 import com.wjh.blog.utils.BeanCopyUtils;
 import com.wjh.blog.utils.UserUtils;
 import com.wjh.blog.vo.ConditionVO;
+import com.wjh.blog.vo.MenuVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +49,48 @@ public class MenuServiceImpl extends ServiceImpl<MenuDao, Menu> implements MenuS
         return null;
     }
 
+    @Override
+    public void saveOrUpdateMenu(MenuVO menuVO) {
+
+    }
+
+    @Override
+    public void deleteMenu(Integer menuId) {
+
+    }
+
+    @Override
+    public List<LabelOptionDTO> listMenuOptions() {
+        // 查询菜单数据
+        List<Menu> menuList = menuDao.selectList(new LambdaQueryWrapper<Menu>()
+                .select(Menu::getId, Menu::getName, Menu::getParentId, Menu::getOrderNum));
+
+        List<LabelOptionDTO> labelOptionDTOS = BeanCopyUtils.copyList(menuList, LabelOptionDTO.class);
+
+        //封转父子数据
+        return labelOptionDTOS.stream()
+                .filter(item -> Objects.isNull(item.getParentId()))
+                .peek(menu -> menu.setChildren(getChilderns(menu, labelOptionDTOS)))
+                .sorted(Comparator.comparingInt(LabelOptionDTO::getOrderNum))
+                .collect(Collectors.toList());
+
+    }
+
+    /**
+     * 封装多级列表的数据
+     *
+     * @param menuChildern
+     * @param list
+     * @return
+     */
+    private List<LabelOptionDTO> getChilderns(LabelOptionDTO menuChildern, List<LabelOptionDTO> list) {
+        return list.stream()
+                .filter(item -> Objects.equals(item.getParentId(), menuChildern.getId()))
+                .peek(menu -> menu.setChildren(getChilderns(menu, list)))
+                .sorted(Comparator.comparingInt(LabelOptionDTO::getOrderNum))
+                .collect(Collectors.toList());
+    }
+
     /**
      * 拿到目录列表
      *
@@ -79,7 +124,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuDao, Menu> implements MenuS
      * @return
      */
     private List<UserMenuDTO> convertUserMenuList(List<Menu> catalogList, Map<Integer, List<Menu>> childrenMap) {
-        return  catalogList.stream().map(item -> {
+        return catalogList.stream().map(item -> {
             //获取目录
             UserMenuDTO userMenuDTO = new UserMenuDTO();
             List<UserMenuDTO> list = new ArrayList<>();

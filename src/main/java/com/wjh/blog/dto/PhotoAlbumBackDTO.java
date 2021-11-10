@@ -5,12 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * 后台相册
- *
- * @author yezhiqiu
- * @date 2021/08/04
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -9,12 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * 预览文章
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @Builder
 @AllArgsConstructor

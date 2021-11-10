@@ -5,12 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * websocket消息
- *
- * @author yezhiqiu
- * @date 2021/08/01
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

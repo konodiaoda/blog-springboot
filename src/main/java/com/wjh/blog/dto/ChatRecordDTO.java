@@ -9,12 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-/**
- * 聊天记录
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

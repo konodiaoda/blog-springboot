@@ -8,12 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-/**
- * 博客后台信息
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @Builder
 @NoArgsConstructor

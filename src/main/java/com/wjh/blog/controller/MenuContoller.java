@@ -1,6 +1,7 @@
 package com.wjh.blog.controller;
 
 import com.wjh.blog.common.Result;
+import com.wjh.blog.dto.LabelOptionDTO;
 import com.wjh.blog.dto.UserMenuDTO;
 import com.wjh.blog.service.MenuService;
 import io.swagger.annotations.Api;
@@ -34,4 +35,16 @@ public class MenuContoller {
     public Result <List<UserMenuDTO>> listUserMenus(){
         return Result.ok(menuService.listUserMenus());
     }
+
+    /**
+     * 查看角色菜单选项
+     *
+     * @return {@link Result<LabelOptionDTO>} 查看角色菜单选项
+     */
+    @ApiOperation(value = "查看角色菜单选项")
+    @GetMapping("/admin/role/menus")
+    public Result<List<LabelOptionDTO>> listMenuOptions() {
+        return Result.ok(menuService.listMenuOptions());
+    }
+
 }

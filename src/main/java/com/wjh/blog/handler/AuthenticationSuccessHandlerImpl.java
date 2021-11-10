@@ -7,12 +7,12 @@ import com.wjh.blog.entity.UserAuth;
 import com.wjh.blog.utils.BeanCopyUtils;
 import com.wjh.blog.utils.JsonUtils;
 import com.wjh.blog.utils.UserUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +25,7 @@ import java.io.IOException;
  */
 @Component
 public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHandler {
-    @Autowired
+    @Resource
     private UserAuthDao userAuthDao;
 
     @Override

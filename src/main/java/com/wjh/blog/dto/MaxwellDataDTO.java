@@ -7,13 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
-/**
- * maxwell监听数据
- *
- * @author yezhqiu
- * @date 2021/07/02
- * @since 1.0.0
- **/
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -5,12 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * 文章统计
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

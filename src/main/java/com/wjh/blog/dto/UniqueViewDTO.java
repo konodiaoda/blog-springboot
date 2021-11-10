@@ -6,12 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-/**
- * 访问量
- *
- * @author yezhiqiu
- * @date 2021/08/01
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

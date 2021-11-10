@@ -7,12 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-/**
- * 回复列表
- *
- * @author yezhiqiu
- * @date 2021/08/01
- */
+
 @Data
 @Builder
 @AllArgsConstructor

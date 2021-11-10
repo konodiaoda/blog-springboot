@@ -1,26 +1,21 @@
 package com.wjh.blog.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wjh.blog.dto.LabelOptionDTO;
 import com.wjh.blog.dto.MenuDTO;
 import com.wjh.blog.dto.UserMenuDTO;
 import com.wjh.blog.entity.Menu;
 import com.wjh.blog.vo.ConditionVO;
+import com.wjh.blog.vo.MenuVO;
 
 import java.util.List;
 
 /**
  * @author wujiahui
- * @description
+ * @description 菜单相关服务
  * @date 2021-10-02 15:06
  */
 public interface MenuService extends IService<Menu> {
-
-    /**
-     * 查看用户菜单
-     *
-     * @return 菜单列表
-     */
-    List<UserMenuDTO> listUserMenus();
 
     /**
      * 查看菜单列表
@@ -29,4 +24,32 @@ public interface MenuService extends IService<Menu> {
      * @return 菜单列表
      */
     List<MenuDTO> listMenus(ConditionVO conditionVO);
+
+    /**
+     * 新增或修改菜单
+     *
+     * @param menuVO 菜单信息
+     */
+    void saveOrUpdateMenu(MenuVO menuVO);
+
+    /**
+     * 删除菜单
+     *
+     * @param menuId 菜单id
+     */
+    void deleteMenu(Integer menuId);
+
+    /**
+     * 查看角色菜单选项
+     *
+     * @return 角色菜单选项
+     */
+    List<LabelOptionDTO> listMenuOptions();
+
+    /**
+     * 查看用户菜单
+     *
+     * @return 菜单列表
+     */
+    List<UserMenuDTO> listUserMenus();
 }

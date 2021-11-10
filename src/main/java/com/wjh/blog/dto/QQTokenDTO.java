@@ -5,13 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * qq token信息
- *
- * @author yezhqiu
- * @date 2021/06/15
- * @since 1.0.0
- **/
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

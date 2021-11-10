@@ -7,12 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-/**
- * 照片dto
- *
- * @author yezhiqiu
- * @date 2021/08/05
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -7,12 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-/**
- * 标签选项
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -25,9 +20,24 @@ public class LabelOptionDTO {
     private Integer id;
 
     /**
-     * 选项名
+     * 接口资源名称
      */
-    private String label;
+    private String resourceName;
+
+    /**
+     * 菜单名称
+     */
+    private String name;
+
+    /**
+     * 父权限id
+     */
+    private Integer parentId;
+
+    /**
+     * 排序
+     */
+    private Integer orderNum;
 
     /**
      * 子选项

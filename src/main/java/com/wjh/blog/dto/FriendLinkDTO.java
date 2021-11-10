@@ -6,12 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-/**
- * 友情链接
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Data
 @Builder
 @AllArgsConstructor
