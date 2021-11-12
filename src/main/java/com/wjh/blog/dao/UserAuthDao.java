@@ -26,6 +26,12 @@ public interface UserAuthDao extends BaseMapper<UserAuth> {
      */
     List<UserBackDTO> listUsers(@Param("current") Long current, @Param("size") Long size, @Param("condition") ConditionVO condition);
 
+
+    /**
+     * 查询当前用户是否被禁用
+     */
+
+
     /**
      * 查询后台用户数量
      * @param condition
